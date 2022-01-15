@@ -1,0 +1,26 @@
+<div class = "exercise">
+    <div class = "exercise-name">{{ exercise.name }}</div>
+    <div>
+        <app-constraint
+            [name] = "'Weight Used (lbs)'"
+            [recordedValue] = "exercise.weightUsed"
+            [minimumValueAllowed] = "exercise.minimumWeightAllowed"
+            [maximumValueAllowed] = "exercise.maximumWeightAllowed"
+        >
+        </app-constraint>
+        <app-constraint
+            [name] = "'Reps Completed'"
+            [recordedValue] = "exercise.repsCompleted"
+            [minimumValueAllowed] = "exercise.minimumRepsAllowed"
+            [maximumValueAllowed] = "exercise.maximumRepsAllowed"
+        >
+        </app-constraint>
+        <app-constraint
+            [name] = "'Time Performed (s)'"
+            [recordedValue] = "exercise.timePerformed"
+            [minimumValueAllowed] = "exercise.minimumDurationAllowed"
+            [maximumValueAllowed] = "exercise.maximumDurationAllowed"
+        >
+        </app-constraint>
+    </div>
+</div>

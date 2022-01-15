@@ -1,0 +1,55 @@
+<div class = "exercise-form">
+    <div class = "exercise-name-column">
+        <select [(ngModel)] = "exercise.name">
+            <option selected hidden>Select an Exercise</option>
+            <option *ngFor = "let exerciseName of exerciseNames; index as i">
+                {{ exerciseName }}
+            </option>
+        </select>
+    </div>
+    <div>
+        <div class = "constraint-form">
+            <div class = "constraint-name-column">Weight Used (lbs)</div>
+            <div class = "recorded-value-column">
+                <input placeholder = "Recorded" [(ngModel)] = "exercise.weightUsed">
+            </div>
+            <div class = "minimum-allowed-value-column">
+                <input placeholder = "Minimum" [(ngModel)] = "exercise.minimumWeightAllowed">
+            </div>
+            <div class = "maximum-allowed-value-column">
+                <input placeholder = "Maximum" [(ngModel)] = "exercise.maximumWeightAllowed">
+            </div>
+        </div>
+        <div class = "constraint-form">
+            <div class = "constraint-name-column">Reps Completed</div>
+            <div class = "recorded-value-column">
+                <input placeholder = "Recorded" [(ngModel)] = "exercise.repsCompleted">
+            </div>
+            <div class = "minimum-allowed-value-column">
+                <input placeholder = "Minimum" [(ngModel)] = "exercise.minimumRepsAllowed">
+            </div>
+            <div class = "maximum-allowed-value-column">
+                <input placeholder = "Maximum" [(ngModel)] = "exercise.maximumRepsAllowed">
+            </div>
+        </div>
+        <div class = "constraint-form">
+            <div class = "constraint-name-column">Time Peformed (s)</div>
+            <div class = "recorded-value-column">
+                <input placeholder = "Recorded" [(ngModel)] = "exercise.timePerformed">
+            </div>
+            <div class = "minimum-allowed-value-column">
+                <input placeholder = "Minimum" [(ngModel)] = "exercise.minimumDurationAllowed">
+            </div>
+            <div class = "maximum-allowed-value-column">
+                <input placeholder = "Maximum" [(ngModel)] = "exercise.maximumDurationAllowed">
+            </div>
+        </div>
+    </div>
+    <button 
+        *ngIf = "needsRemoveButton" 
+        class = "remove-exercise-button"
+        (click) = "removeExercise()"
+    >
+        Remove Exercise
+    </button>
+</div>

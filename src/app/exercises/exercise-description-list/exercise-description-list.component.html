@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<div class = "exercise-description-list">
+    <app-exercise-description 
+        *ngFor = "let exerciseDescription of exerciseDescriptions"
+        [exerciseDescription] = "exerciseDescription"
+        (update) = "fetchExerciseDescriptions()"
+    >
+    </app-exercise-description>
+    <app-add-exercise-description-form (addExerciseDescription) = "fetchExerciseDescriptions()"></app-add-exercise-description-form>
+</div>

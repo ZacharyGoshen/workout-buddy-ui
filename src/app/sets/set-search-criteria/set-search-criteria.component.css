@@ -1,0 +1,19 @@
+.set-search-criteria {
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.header {
+    margin-bottom: 10px;
+}
+
+.add-exercise-filter-button {
+    margin-bottom: 10px;
+}
+
+.set-filters {
+    margin-bottom: 10px;
+}

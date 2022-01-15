@@ -1,0 +1,10 @@
+.exercise-search-filter {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.search-criterion {
+    margin-right: 20px;
+}

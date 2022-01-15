@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div class = "set-list">
+    <app-set-search-criteria 
+        [criteria] = "criteria"
+        (search) = "fetchSets()"
+    >
+    </app-set-search-criteria>
+    <div class = "set-sort-form">
+        <div>Sort By:</div>
+        <select [(ngModel)] = "criteria.sortBy" (change) = "fetchSets()">
+            <option [ngValue] = "'mostRecentCompletionTime'">Date Completed (Most Recent)</option>
+            <option [ngValue] = "'leastRecentCompletionTime'">Date Completed (Least Recent)</option>
+        </select>
+    </div>
+    <app-set 
+        *ngFor = "let set of sets"
+        [set] = "set"
+    >   
+    </app-set>
+</div>

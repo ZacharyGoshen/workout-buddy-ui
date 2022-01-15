@@ -1,0 +1,16 @@
+.exercise {
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 5px;
+}
+
+.exercise-name {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 200px;
+}

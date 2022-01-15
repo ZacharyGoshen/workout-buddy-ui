@@ -1,0 +1,12 @@
+.edit-set-form {
+    display: flex;
+    flex-direction: row;
+}
+
+.index-column {
+    padding-right: 10px;
+}
+
+.space-fill-container {
+    flex-grow: 1;
+}

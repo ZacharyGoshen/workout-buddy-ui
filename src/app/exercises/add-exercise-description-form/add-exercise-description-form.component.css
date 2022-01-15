@@ -1,0 +1,14 @@
+.add-exercise-description-form {
+    align-items: center;
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.space-fill-container {
+    flex-grow: 1;
+}

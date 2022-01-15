@@ -1,0 +1,32 @@
+<div>
+    <div *ngFor = "let exercise of set.exercises; index as i">
+        <app-exercise-form 
+            [exerciseNames] = "exerciseNames"
+            [exercise] = "exercise" 
+            [needsRemoveButton] = "set.exercises.length > 1" 
+            (remove) = "removeExercise(i)"
+        >
+        </app-exercise-form>
+    </div>
+    <div class = "add-exercise-button-container">
+        <button 
+            class = "add-exercise-button" 
+            (click) = "addExercise()"
+        >
+            Add Exercise
+        </button>
+    </div>
+    <div class = "time-rested-constraint-form">
+        <div class = "exercise-name-column"></div>
+        <div class = "constraint-name-column">Time Rested (s)</div>
+        <div class = "recorded-value-column">
+            <input placeholder = "Recorded" [(ngModel)] = "set.timeRested">
+        </div>
+        <div class = "minimum-allowed-value-column">
+            <input placeholder = "Minimum" [(ngModel)] = "set.minimumRestTimeAllowed">
+        </div>
+        <div class = "maximum-allowed-value-column">
+            <input placeholder = "Maximum" [(ngModel)] = "set.maximumRestTimeAllowed">
+        </div>
+    </div>
+</div>

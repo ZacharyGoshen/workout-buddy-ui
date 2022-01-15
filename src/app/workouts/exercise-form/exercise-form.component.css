@@ -1,0 +1,36 @@
+.exercise-form {
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-bottom: 5px;
+}
+
+.exercise-name-column {
+    width: 200px;   
+}
+
+.constraint-name-column {
+    width: 200px;   
+}
+
+.recorded-value-column {
+    width: 200px;   
+}
+
+.minimum-allowed-value-column {
+    width: 200px;   
+}
+
+.maximum-allowed-value-column {
+    width: 200px;   
+}
+
+.constraint-form {
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px 5px 0px;
+}

@@ -1,0 +1,32 @@
+.add-exercise-button-container {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.time-rested-constraint-form {
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+}
+
+.exercise-name-column {
+    width: 200px;   
+}
+
+.constraint-name-column {
+    width: 200px;   
+}
+
+.recorded-value-column {
+    width: 200px;   
+}
+
+.minimum-allowed-value-column {
+    width: 200px;   
+}
+
+.maximum-allowed-value-column {
+    width: 200px;   
+}

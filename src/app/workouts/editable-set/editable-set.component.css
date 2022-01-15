@@ -1,0 +1,40 @@
+.editable-set {
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.index-column {
+    padding-right: 10px;
+}
+
+.set-content-when-not-being-edited {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.edit-set-form {
+    flex-grow: 1;
+}
+
+.space-fill-container {
+    flex-grow: 1;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.edit-button {
+    margin-right: 10px;
+}
+
+.duplicate-button {
+    margin-right: 10px;
+}

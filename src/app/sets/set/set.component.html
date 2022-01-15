@@ -1,0 +1,11 @@
+<div class = "set">
+    <div class = "workout-name-column">
+        <div>Workout</div>
+        <a class = "workout-name" routerLink = "{{ workoutUrl }}">{{ set.workoutName }}</a>
+    </div>
+    <div class = "date-completed-column">
+        <div>Date Completed</div>
+        <div class = "date-completed">{{ formattedCompletionTime }}</div>
+    </div>
+    <app-set-content [set] = "set"></app-set-content>
+</div>

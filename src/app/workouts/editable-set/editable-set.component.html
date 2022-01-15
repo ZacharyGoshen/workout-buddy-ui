@@ -1,0 +1,26 @@
+<div class = "editable-set">
+    <div class = "index-column">
+        <div>{{ index + 1 }}.)</div>
+    </div>
+    <app-edit-set-form 
+        *ngIf = "isBeingEdited"
+        class = "edit-set-form"
+        [workoutId] = "workoutId"
+        [setIndex] = "index"
+        [set] = "set"
+        [exerciseNames] = "exerciseNames"
+        (submit) = "updateSet()"
+    >
+    </app-edit-set-form>
+    <div *ngIf = "!isBeingEdited" class = "set-content-when-not-being-edited">
+        <app-set-content [set] = "set"></app-set-content>
+        <div class = "space-fill-container"></div>
+        <div>
+            <div class = "buttons">
+                <button class = "edit-button" (click) = "startEditing()">Edit</button>
+                <button class = "duplicate-button" (click) = "duplicateSet()">Duplicate</button>
+                <button (click) = "removeSet()">Remove</button>
+            </div>
+        </div>
+    </div>
+</div>

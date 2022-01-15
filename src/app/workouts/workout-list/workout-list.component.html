@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+<div class = "workout-list">
+    <app-workout-list-item
+        *ngFor = "let workout of workouts"
+        [workout] = "workout"
+    >
+    </app-workout-list-item>
+</div>

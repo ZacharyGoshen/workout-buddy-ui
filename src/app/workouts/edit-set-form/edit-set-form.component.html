@@ -1,0 +1,14 @@
+<div class = "edit-set-form">
+    <div>
+        <app-set-headers></app-set-headers>
+        <app-set-form 
+            [set] = "set"
+            [exerciseNames] = "exerciseNames"
+        >
+        </app-set-form>
+    </div>    
+    <div class = "space-fill-container"></div>
+    <div>
+        <button (click) = "save()">Save</button>
+    </div>
+</div>

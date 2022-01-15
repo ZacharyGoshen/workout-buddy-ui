@@ -1,0 +1,22 @@
+.constraint {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin: 5px 0px 5px 0px;
+}
+
+.recorded-value-column {
+    width: 200px;
+}
+
+.name-column {
+    width: 200px;
+}
+
+.minimum-value-allowed-column {
+    width: 200px;
+}
+
+.maximum-value-allowed-column {
+    width: 200px;
+}
