@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { Set } from "../shared/set.model";
+import { Workout } from "../workouts/shared/workout.model";
 
 @Injectable({ providedIn: 'root' })
 export class WorkoutUpdateService {
@@ -13,6 +14,11 @@ export class WorkoutUpdateService {
     };
 
     constructor(private httpClient: HttpClient) { }
+
+    update(id: string, workout: Workout): Observable<null> {
+        let queryString: string = 'http://localhost:8080/api/workouts/' + id; 
+        return this.httpClient.put<null>(queryString, workout);
+    }
 
     addSet(workoutId: string, setIndex: number, set: Set): Observable<null> {
         let queryString: string = 'http://localhost:8080/api/workouts/' + workoutId + '/addSet/' + setIndex; 

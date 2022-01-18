@@ -1,10 +1,15 @@
 .edit-set-form {
     display: flex;
     flex-direction: row;
+    padding: 10px 10px 0px 10px;
 }
 
-.index-column {
-    padding-right: 10px;
+.workout-set-headers {
+    margin-bottom: 10px;
+}
+
+.set-form {
+    margin-left: 30px;
 }
 
 .space-fill-container {

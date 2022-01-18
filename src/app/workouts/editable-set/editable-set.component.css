@@ -1,25 +1,17 @@
 .editable-set {
     background-color: white;
-    border: 1px solid lightgray;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
-    padding: 5px;
+    padding: 10px 10px 0px 10px;
+}
+
+.workout-set-headers {
     margin-bottom: 10px;
 }
 
-.index-column {
-    padding-right: 10px;
-}
-
-.set-content-when-not-being-edited {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-}
-
-.edit-set-form {
-    flex-grow: 1;
+.set-content {
+    margin-left: 30px;
 }
 
 .space-fill-container {

@@ -2,7 +2,7 @@
     align-items: center;
     display: flex;
     flex-direction: row;
-    margin: 5px 0px 5px 0px;
+    padding: 5px 0px;
 }
 
 .recorded-value-column {

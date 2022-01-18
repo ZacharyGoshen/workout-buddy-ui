@@ -1,0 +1,16 @@
+<form [formGroup] = "form">
+    <div class = "edit-exercise-description-form">
+        <app-exercise-description-name-form-field 
+            [name] = "nameFormControl"
+            (enter) = "onSubmit()"
+        ></app-exercise-description-name-form-field>
+        <div class = "space-fill-container"></div>
+        <button 
+            mat-raised-button 
+            [disabled] = "form.invalid" 
+            (click) = "onSubmit()"
+        >
+            Save
+        </button>
+    </div>    
+</form> 

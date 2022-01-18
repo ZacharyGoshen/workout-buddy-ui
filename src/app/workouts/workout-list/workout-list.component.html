@@ -3,6 +3,14 @@
     <app-workout-list-item
         *ngFor = "let workout of workouts"
         [workout] = "workout"
+        (delete) = "fetchWorkouts()"
     >
     </app-workout-list-item>
+    <button 
+        mat-raised-button 
+        class = "create-new-workout-button"
+        (click) = "createNewWorkout()"
+    > 
+        Create New Workout
+    </button>
 </div>

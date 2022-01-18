@@ -1,14 +1,11 @@
 .add-exercise-button-container {
-    background-color: whitesmoke;
-    border-radius: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
+    margin: 10px 0px;
 }
 
-.time-rested-constraint-form {
+.time-rested-constraint {
     display: flex;
     flex-direction: row;
-    padding-left: 5px;
+    margin: 5px 0px;
 }
 
 .exercise-name-column {

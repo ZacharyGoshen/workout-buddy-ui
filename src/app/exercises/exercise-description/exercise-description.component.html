@@ -1,15 +1,15 @@
-<div *ngIf = "isBeingEdited" class = "exercise-description">
-    <input placeholder = "Exercise Name" [(ngModel)] = "exerciseDescription.name">
-    <div class = "space-fill-container"></div>
-    <div>
-        <button (click) = "save()">Save</button>
-    </div>
-</div>  
+<app-edit-exercise-description-form 
+    *ngIf = "isBeingEdited" 
+    [exerciseDescription] = "exerciseDescription"
+    (submit) = "onUpdate()"
+>
+</app-edit-exercise-description-form>
 <div *ngIf = "!isBeingEdited" class = "exercise-description">
     <div>{{ exerciseDescription.name }}</div>
     <div class = "space-fill-container"></div>
     <div>
-        <button class = "edit-button" (click) = "edit()">Edit</button>
-        <button (click) = "delete()">Delete</button>
+        <button mat-raised-button class = "edit-button" (click) = "edit()">Edit</button>
+        <button mat-raised-button color = "warn" (click) = "delete()">Delete</button>
     </div>
-</div>       
+</div>
+<mat-divider></mat-divider>  

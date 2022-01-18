@@ -1,0 +1,26 @@
+<div 
+    *ngIf = "completionTime.value" 
+    class = "workout-completion-time-container"
+>
+    <div class = "completed-label">Completed on {{ completionTimeAsDate!.toDateString() }}</div>
+    <mat-checkbox 
+        [checked] = "true" 
+        (click) = "markNotCompleted()"
+    >
+    </mat-checkbox>
+    <div>
+        <input 
+            [matDatepicker] = "completionTimeDatePicker" 
+            [(ngModel)] = "completionTimeAsDate"
+            (dateChange) = "updateForm()"
+            placeholder = "Choose a date" 
+            hidden
+        >
+        <mat-datepicker-toggle matSuffix [for] = "completionTimeDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #completionTimeDatePicker disabled = "false"></mat-datepicker>
+    </div>
+</div>
+<div *ngIf = "!completionTime.value" class = "workout-completion-time-container">
+    <div class = "completed-label">Not Completed</div>
+    <mat-checkbox class = "completed-checkbox" (click) = "markCompleted()"></mat-checkbox>
+</div>

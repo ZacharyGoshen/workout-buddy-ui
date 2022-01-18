@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Set } from 'src/app/shared/set.model';
 
 @Component({
@@ -9,16 +10,23 @@ import { Set } from 'src/app/shared/set.model';
 export class EditableSetComponent {
 
   @Input() workoutId: string = "";
+
+  @Input() index: number = 0;
+
   @Input() set: Set = {
     type: "",
     exercises: [],
     workoutId: ""
   };
-  @Input() index: number = 0;
+
+  @Input() setForm: FormGroup = new FormGroup({});
+
   @Input() exerciseNames: string[] = [];
 
   @Output() update: EventEmitter<null> = new EventEmitter();
+
   @Output() duplicate: EventEmitter<null> = new EventEmitter();
+  
   @Output() remove: EventEmitter<null> = new EventEmitter();
 
   isBeingEdited: boolean = false;

@@ -1,0 +1,8 @@
+<mat-form-field>
+    <mat-label>Select an Exercise</mat-label>
+    <mat-select [formControl] = "exercise" required>
+        <mat-option *ngFor = "let exerciseName of exerciseNames" [value] = "exerciseName">
+            {{ exerciseName }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>

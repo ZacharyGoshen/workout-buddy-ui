@@ -1,32 +1,26 @@
 <div>
-    <div *ngFor = "let exercise of set.exercises; index as i">
+    <div *ngFor = "let exercise of exercises; index as i">
         <app-exercise-form 
             [exerciseNames] = "exerciseNames"
-            [exercise] = "exercise" 
-            [needsRemoveButton] = "set.exercises.length > 1" 
+            [exercise] = "exercise"
+            [needsRemoveButton] = "exercises.length > 1" 
             (remove) = "removeExercise(i)"
         >
         </app-exercise-form>
+        <mat-divider></mat-divider>
     </div>
     <div class = "add-exercise-button-container">
         <button 
             class = "add-exercise-button" 
+            mat-raised-button
             (click) = "addExercise()"
         >
             Add Exercise
         </button>
     </div>
-    <div class = "time-rested-constraint-form">
+    <mat-divider></mat-divider>
+    <div class = "time-rested-constraint">
         <div class = "exercise-name-column"></div>
-        <div class = "constraint-name-column">Time Rested (s)</div>
-        <div class = "recorded-value-column">
-            <input placeholder = "Recorded" [(ngModel)] = "set.timeRested">
-        </div>
-        <div class = "minimum-allowed-value-column">
-            <input placeholder = "Minimum" [(ngModel)] = "set.minimumRestTimeAllowed">
-        </div>
-        <div class = "maximum-allowed-value-column">
-            <input placeholder = "Maximum" [(ngModel)] = "set.maximumRestTimeAllowed">
-        </div>
+        <app-constraint-form [name] = "'Time Rested(s)'" [constraint] = "timeRestedConstraint"></app-constraint-form>
     </div>
 </div>

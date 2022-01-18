@@ -1,20 +1,14 @@
-<div>
-    <app-set-headers></app-set-headers>
-    <div>
-        <app-exercise 
-            *ngFor = "let exercise of set.exercises"
-            [exercise] = "exercise"
-        >
-        </app-exercise >
-        <div class = "time-rested-constraint">
-            <div class = "constraint-name-column"></div>
-            <app-constraint 
-                [name] = "'Time Rested (s)'"
-                [recordedValue] = "set.timeRested"
-                [minimumValueAllowed] = "set.minimumRestTimeAllowed"
-                [maximumValueAllowed] = "set.maximumRestTimeAllowed"
-            >
-            </app-constraint>
-        </div>
-    </div>
+<div *ngFor = "let exercise of set.exercises">
+    <app-exercise [exercise] = "exercise"></app-exercise>
+    <mat-divider></mat-divider>
+</div>
+<div class = "time-rested-constraint">
+    <div class = "constraint-name-column"></div>
+    <app-constraint 
+        [name] = "'Time Rested (s)'"
+        [recordedValue] = "set.timeRested"
+        [minimumValueAllowed] = "set.minimumRestTimeAllowed"
+        [maximumValueAllowed] = "set.maximumRestTimeAllowed"
+    >
+    </app-constraint>
 </div>

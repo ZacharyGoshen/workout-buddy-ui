@@ -7,7 +7,7 @@ import { WorkoutComponent } from './workouts/workout/workout.component';
 
 const routes: Routes = [
   { path: 'workouts', component: WorkoutListComponent },
-  { path: 'workout/:id', component: WorkoutComponent },
+  { path: 'workouts/:id', component: WorkoutComponent },
   { path: 'sets', component: SetListComponent },
   { path: 'exercises', component: ExerciseDescriptionListComponent }
 ];

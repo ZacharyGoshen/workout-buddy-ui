@@ -1,14 +1,24 @@
 .workout-list-item {
     align-items: center;
     background-color: white;
-    border: 1px solid lightgray;
-    border-radius: 5px;
     display: flex;
     flex-direction: row;
-    padding: 5px;
-    margin-bottom: 10px;
+    margin: 10px 0px 10px 0px;
 }
 
 .workout-link {
+    margin-right: 10px;
+}
+
+.hyphen {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.workout-completion-time {
     flex-grow: 1;
+}
+
+.copy-button {
+    margin-right: 10px;
 }

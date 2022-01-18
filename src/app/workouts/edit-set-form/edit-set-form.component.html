@@ -1,14 +1,15 @@
 <div class = "edit-set-form">
     <div>
-        <app-set-headers></app-set-headers>
-        <app-set-form 
-            [set] = "set"
-            [exerciseNames] = "exerciseNames"
-        >
-        </app-set-form>
+        <div class = "workout-set-headers">
+            <app-workout-set-headers [index] = "index"></app-workout-set-headers>
+        </div>
+        <mat-divider></mat-divider>
+        <div class = "set-form">
+            <app-set-form [set] = "set" [exerciseNames] = "exerciseNames"></app-set-form>
+        </div>
     </div>    
     <div class = "space-fill-container"></div>
     <div>
-        <button (click) = "save()">Save</button>
+        <button mat-raised-button (click) = "submit.emit()">Save</button>
     </div>
 </div>

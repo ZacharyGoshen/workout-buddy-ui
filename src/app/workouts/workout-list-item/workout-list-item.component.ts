@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { WorkoutCreationService } from 'src/app/core/workout-creation.service';
 import { WorkoutDeletionService } from 'src/app/core/workout-deletion.service';
 import { DateFormatter } from 'src/app/shared/date-formatter';
 import { Workout } from '../shared/workout.model';
@@ -15,18 +17,28 @@ export class WorkoutListItemComponent {
     sets: []
   }
 
+  @Output() delete: EventEmitter<null> = new EventEmitter();
+
   workoutUrl: string = '';
   formattedCompletionTime: string = '';
 
-  constructor(private workoutDeletionService: WorkoutDeletionService) {}
+  constructor(private router: Router, private workoutCreationService: WorkoutCreationService, private workoutDeletionService: WorkoutDeletionService) {}
   
   ngOnInit(): void {
-    this.workoutUrl = '/workout/' + this.workout.id;
+    this.workoutUrl = '/workouts/' + this.workout.id;
     this.formattedCompletionTime = DateFormatter.format(this.workout.timeCompleted!);
   }
 
-  delete(): void {
-    this.workoutDeletionService.deleteById(this.workout.id).subscribe();
+  createNotCompletedCopyOfWorkout(): void {
+    this.workoutCreationService
+      .createNotCompletedCopy(this.workout.id)
+      .subscribe(id => this.router.navigate(['/workouts', id]));
+  }
+
+  deleteWorkout(): void {
+    this.workoutDeletionService
+      .deleteById(this.workout.id)
+      .subscribe(observer => this.delete.emit());
    }
 
 }

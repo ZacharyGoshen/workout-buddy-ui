@@ -1,0 +1,33 @@
+<div class = "constraint-form">
+    <div class = "name-column">{{ name }}</div>
+    <div class = "recorded-value-column">
+        <mat-form-field>
+            <input 
+                matInput 
+                type = "number" 
+                placeholder = "Recorded"
+                [formControl] = "recordedValue"
+            >
+        </mat-form-field>
+    </div>
+    <div class = "minimum-allowed-value-column">
+        <mat-form-field>
+            <input 
+                matInput 
+                type = "number" 
+                placeholder = "Minimum"
+                [formControl] = "minimumAllowedValue"
+            >
+        </mat-form-field>
+    </div>
+    <div class = "maximum-allowed-value-column">
+        <mat-form-field>
+            <input 
+                matInput 
+                type = "number" 
+                placeholder = "Maximum"
+                [formControl] = "maximumAllowedValue"
+            >
+        </mat-form-field>
+    </div>
+</div>

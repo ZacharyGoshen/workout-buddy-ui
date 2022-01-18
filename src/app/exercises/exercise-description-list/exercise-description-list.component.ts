@@ -11,6 +11,7 @@ import { ExerciseDescription } from '../shared/exercise-description.model';
 export class ExerciseDescriptionListComponent implements OnInit {
 
   exerciseDescriptions: ExerciseDescription[] = [];
+  isCreatingNewExerciseDescription: boolean = false;
 
   constructor(private exerciseDescriptionQueryService: ExerciseDescriptionQueryService) {}
 
@@ -21,6 +22,11 @@ export class ExerciseDescriptionListComponent implements OnInit {
   fetchExerciseDescriptions(): void {
     let exerciseDescriptionsObservable: Observable<ExerciseDescription[]> = this.exerciseDescriptionQueryService.findAll();
     exerciseDescriptionsObservable.subscribe(exerciseDescriptions => this.exerciseDescriptions = exerciseDescriptions);
+  }
+
+  onCreateExerciseDescription(): void {
+    this.isCreatingNewExerciseDescription = false;
+    this.fetchExerciseDescriptions();
   }
 
 }

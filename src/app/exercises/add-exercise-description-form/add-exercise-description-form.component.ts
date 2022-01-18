@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ExerciseDescriptionCreationService } from 'src/app/core/exercise-description-creation.service';
 import { ExerciseDescription } from '../shared/exercise-description.model';
 
@@ -9,19 +10,42 @@ import { ExerciseDescription } from '../shared/exercise-description.model';
 })
 export class AddExerciseDescriptionFormComponent {
 
-  @Output() addExerciseDescription: EventEmitter<null> = new EventEmitter();
-  
-  exerciseDescription: ExerciseDescription = {
-    id: "",
-    name: ""
-  };
+  @Output() submit: EventEmitter<null> = new EventEmitter();
+  @Output() cancel: EventEmitter<null> = new EventEmitter();
 
-  constructor(private exerciseDescriptionCreationService: ExerciseDescriptionCreationService) {}
+  form: FormGroup = this.formBuilder.group({
+    name: [
+      '', 
+      [Validators.required, Validators.minLength(3), Validators.maxLength(50)]
+    ]
+  });
 
-  submit(): void {
+  constructor(private formBuilder: FormBuilder, private exerciseDescriptionCreationService: ExerciseDescriptionCreationService) {}
+
+  get nameFormControl(): FormControl {
+    return this.form.controls['name'] as FormControl;
+  }
+
+  onSubmit(): void {
+    if (this.form.invalid) {
+      return;
+    }
+    
+    let exerciseDescription: ExerciseDescription = {
+      id: '',
+      name: this.form.controls['name'].value
+    }
+
     this.exerciseDescriptionCreationService
-      .create(this.exerciseDescription)
-      .subscribe(observer => this.addExerciseDescription.emit());
+      .create(exerciseDescription)
+      .subscribe(observer => { 
+        this.submit.emit();
+        this.form.reset();
+      });
+  }
+
+  onCancel(): void {
+    this.cancel.emit();
   }
 
 }

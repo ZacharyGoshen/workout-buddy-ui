@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SetHeadersComponent } from './set-headers.component';
+import { ExerciseHeadersComponent } from './exercise-headers.component';
 
-describe('SetHeadersComponent', () => {
-  let component: SetHeadersComponent;
-  let fixture: ComponentFixture<SetHeadersComponent>;
+describe('ExerciseHeadersComponent', () => {
+  let component: ExerciseHeadersComponent;
+  let fixture: ComponentFixture<ExerciseHeadersComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SetHeadersComponent ]
+      declarations: [ ExerciseHeadersComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SetHeadersComponent);
+    fixture = TestBed.createComponent(ExerciseHeadersComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

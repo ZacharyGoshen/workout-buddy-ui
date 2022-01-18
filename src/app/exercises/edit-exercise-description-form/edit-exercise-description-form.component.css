@@ -1,0 +1,11 @@
+.edit-exercise-description-form {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0px 10px 0px;
+}
+
+.space-fill-container {
+    flex-grow: 1;
+}

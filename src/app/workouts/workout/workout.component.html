@@ -1,28 +1,38 @@
 <app-navbar></app-navbar>
-<div class = "workout">
-    <h1>{{ workout.name }} - {{ formattedCompletionTime }}</h1>
+<div *ngIf = "workoutHasBeenFetched && exercisesHaveBeenFetched" class = "workout">
+    <app-editable-workout-name 
+        [name] = "nameFormControl" 
+        (edit) = "updateWorkoutName()"
+    >
+    </app-editable-workout-name>
+    <app-editable-workout-completion-time
+        [completionTime] = "completionTimeFormControl" 
+        (edit) = "updateWorkoutCompletionTime()"
+    >
+    </app-editable-workout-completion-time>
+    <mat-divider></mat-divider>
     <div cdkDropList (cdkDropListDropped) = "moveSet($event)">
-        <div 
-            *ngFor = "let set of workout.sets; index as i" 
-            cdkDrag
-        >
-            <app-editable-set 
-                [workoutId] = "workoutId"
-                [set] = "set"
-                [index] = "i"
-                [exerciseNames] = "exerciseNames"
-                (update) = "fetchWorkout()"
-                (duplicate) = "duplicateSet(i)"
-                (remove) = "removeSet(i)"
-            >   
-            </app-editable-set>
+        <div *ngFor = "let set of workout.sets; index as i">
+            <div cdkDrag>
+                <app-editable-set 
+                    [index] = "i"
+                    [set] = "set"
+                    [setForm] = "getSetForm(i)"
+                    [exerciseNames] = "exerciseNames"
+                    (update) = "fetchWorkout()"
+                    (duplicate) = "duplicateSet(i)"
+                    (remove) = "removeSet(i)"
+                >   
+                </app-editable-set>
+            </div>
+            <mat-divider></mat-divider>
         </div>
     </div>
-    <app-add-set-form 
+    <!-- <app-add-set-form 
         [workoutId] = "workoutId" 
         [numberOfSetsInWorkout] = "workout.sets.length" 
         [exerciseNames] = "exerciseNames"
         (submit) = "fetchWorkout()"
     >
-    </app-add-set-form >
+    </app-add-set-form > -->
 </div>

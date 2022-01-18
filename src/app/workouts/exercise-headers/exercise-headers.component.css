@@ -1,24 +1,24 @@
-.set-headers {
+.exercise-headers {
     display: flex;
     flex-direction: row;
 }
 
-.exercise-name-column {
+.exercise-header {
     width: 200px;   
 }
 
-.constraint-name-column {
+.constraint-header {
     width: 200px;   
 }
 
-.recorded-value-column {
+.recorded-header {
     width: 200px;   
 }
 
-.minimum-allowed-value-column {
+.minimum-header {
     width: 200px;   
 }
 
-.maximum-allowed-value-column {
+.maximum-header {
     width: 200px;   
 }

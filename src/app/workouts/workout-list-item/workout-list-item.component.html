@@ -1,4 +1,19 @@
 <div class = "workout-list-item">
-    <a class = "workout-link" [routerLink] = "workoutUrl">{{ workout.name }} - {{ formattedCompletionTime }}</a>
-    <button (click) = "delete()">Delete</button>
+    <a class = "workout-link" [routerLink] = "workoutUrl">{{ workout.name }}</a>
+    <div class = "hyphen">-</div>
+    <div 
+        *ngIf = "workout.timeCompleted" 
+        class = "workout-completion-time"
+    >
+        Completed on {{ formattedCompletionTime }}
+    </div>
+    <div 
+        *ngIf = "!workout.timeCompleted" 
+        class = "workout-completion-time"
+    >
+        Not Completed
+    </div>
+    <button mat-raised-button class = "copy-button" (click) = "createNotCompletedCopyOfWorkout()">Copy As New Workout</button>
+    <button mat-raised-button color = "warn" (click) = "deleteWorkout()">Delete</button>
 </div>  
+<mat-divider></mat-divider>

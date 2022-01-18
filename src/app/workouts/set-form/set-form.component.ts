@@ -1,7 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Exercise } from 'src/app/shared/exercise.model';
-import { Set } from 'src/app/shared/set.model';
-import { WorkoutUpdateService } from 'src/app/core/workout-update.service';
+import { FormArray, FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-set-form',
@@ -10,42 +8,46 @@ import { WorkoutUpdateService } from 'src/app/core/workout-update.service';
 })
 export class SetFormComponent {
 
-  @Input() set: Set = {
-    type: "",
-    exercises: [
-      {
-        name: ""
-      }
-    ],
-    workoutId: ""
-  };
+  @Input() set: FormGroup = new FormGroup({});
+
   @Input() exerciseNames: string[] = [];
 
   @Output() submit: EventEmitter<null> = new EventEmitter();
 
-  constructor(private workoutUpdateService: WorkoutUpdateService) {}
+  get exercises(): FormGroup[] {
+    let exercisesFormArray: FormArray = this.set.get('exercises') as FormArray;
+    
+    let exerciseFormGroups: FormGroup[] = [];
+    for (let exerciseAbstractControl of exercisesFormArray.controls) {
+      let exerciseFormGroup: FormGroup = exerciseAbstractControl as FormGroup;
+      exerciseFormGroups.push(exerciseFormGroup); 
+    }
+
+    return exerciseFormGroups;
+  }
+
+  get timeRestedConstraint(): FormGroup {
+    return this.set.get('restTime') as FormGroup;
+  }
 
   addExercise(): void {
-    let exercise: Exercise = {
-      name: ""
-    };
-
-    this.set.exercises.push(exercise);
-    
-    this.updateSetType();
+    let exercises: FormArray = this.set.get('exercises') as FormArray;
+    exercises.push(new FormGroup({}));
   }
 
   removeExercise(index: number): void {
-    this.set.exercises.splice(index, 1);
+    let exercises: FormArray = this.set.get('exercises') as FormArray;
+    exercises.removeAt(index);
 
     this.updateSetType();
   }
 
   updateSetType(): void {
-    if (this.set.exercises.length > 1) {
-      this.set.type = "Superset";
+    let exercises: FormArray = this.set.get('exercises') as FormArray;
+    if (exercises.length > 1) {
+      this.set.controls['type'].setValue('SuperSet');
     } else {
-      this.set.type = "Single Exercise Set";
+      this.set.controls['type'].setValue('Single Exercise Set');
     }
   }
 

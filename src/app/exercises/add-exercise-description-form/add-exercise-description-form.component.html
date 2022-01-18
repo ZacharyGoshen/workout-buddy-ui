@@ -1,8 +1,26 @@
-<div class = "add-exercise-description-form">
-    <input placeholder = "Exercise Name" [(ngModel)] = "exerciseDescription.name">
-    <div class = "space-fill-container"></div>
-    <div>
-        <button (click) = "submit()">Add</button>
-    </div>
-</div>     
+<form [formGroup] = "form">
+    <div class = "add-exercise-description-form">
+        <app-exercise-description-name-form-field 
+            [name] = "nameFormControl"
+            (enter) = "onSubmit()"
+        >
+        </app-exercise-description-name-form-field>
+        <div class = "space-fill-container"></div>
+        <button 
+            mat-raised-button
+            class = "submit-button"
+            [disabled] = "form.invalid" 
+            (click) = "onSubmit()"
+        >
+            Add
+        </button>
+        <button 
+            mat-raised-button
+            color = "warn"
+            (click) = "onCancel()"
+        >
+            Cancel
+        </button>
+    </div>    
+</form> 
 
