@@ -1,0 +1,39 @@
+<div class = "exercise-search-filter">
+    <div class = "search-criterion">
+        <div class = "search-criterion-label">Exercise</div>
+        <mat-form-field>
+            <mat-label>Exercise</mat-label>
+            <mat-select [formControl] = "filter.name">
+                <mat-option [value] = "'Any'">Any</mat-option>
+                <mat-option *ngFor = "let exerciseName of exerciseNames" [value] = "exerciseName">{{ exerciseName }}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class = "search-criterion">
+        <div class = "search-criterion-label">Weight Used</div>
+        <app-numeric-range-form 
+            [lowerBound] = "filter.minimumWeightUsed" 
+            [upperBound] = "filter.maximumWeightUsed"
+        >
+        </app-numeric-range-form>
+    </div>
+    <div class = "search-criterion">
+        <div class = "search-criterion-label">Reps Completed</div>
+        <app-numeric-range-form 
+            [lowerBound] = "filter.minimumRepsCompleted" 
+            [upperBound] = "filter.maximumRepsCompleted"
+        >
+        </app-numeric-range-form>
+    </div>
+    <div class = "search-criterion">
+        <div class = "search-criterion-label">Time Performed</div>
+        <app-numeric-range-form 
+            [lowerBound] = "filter.minimumTimePerformed" 
+            [upperBound] = "filter.maximumTimePerformed"
+        >
+        </app-numeric-range-form>
+    </div>
+    <div>
+        <button (click) = "remove.emit()" mat-raised-button color = "warn">Remove</button>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+.time-rested-filter {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.time-rested-label {
+    font-weight: 500;
+    width: 200px;
+}
+
+.time-rested-divider {
+    margin-bottom: 10px;
+}
+
+.exercise-filter {
+    margin-bottom: 10px;
+}
+
+.add-exercise-filter-button {
+    margin-bottom: 10px;
+}

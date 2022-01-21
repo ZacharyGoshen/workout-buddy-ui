@@ -1,0 +1,12 @@
+.numeric-range-form {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.range-hyphen {
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 20px;
+    margin-right: 20px;
+}

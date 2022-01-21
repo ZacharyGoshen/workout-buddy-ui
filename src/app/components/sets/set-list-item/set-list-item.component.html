@@ -1,0 +1,29 @@
+<div class = "set-list-item">
+    <div>
+        <div class = "set-list-item-headers">
+            <app-set-list-item-headers ></app-set-list-item-headers>
+        </div>
+        <mat-divider></mat-divider>
+        <div class = "set">
+            <div class = "workout-name-column">
+                <a class = "workout-name" routerLink = "{{ workoutUrl }}">{{ set.workoutName }}</a>
+            </div>
+            <div class = "date-completed-column">
+                <div 
+                    *ngIf = "set.timeCompleted" 
+                    class = "date-completed"
+                >
+                    {{ formattedCompletionTime }}
+                </div>
+                <div 
+                    *ngIf = "!set.timeCompleted" 
+                    class = "date-completed"
+                >
+                    Not Completed
+                </div>
+            </div>
+            <app-set-content [set] = "set"></app-set-content>
+        </div>
+    </div>
+    <div class = "space-fill-container"></div>
+</div>

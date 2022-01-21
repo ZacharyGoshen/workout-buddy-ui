@@ -1,0 +1,14 @@
+.set-list-item-headers {
+    display: flex;
+    flex-direction: row;
+}
+
+.workout-header {
+    font-weight: 500;
+    width: 200px;   
+}
+
+.date-completed-header {
+    font-weight: 500;
+    width: 200px;   
+}

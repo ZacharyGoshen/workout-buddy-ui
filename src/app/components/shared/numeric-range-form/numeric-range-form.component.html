@@ -1,0 +1,19 @@
+<div class = "numeric-range-form">
+    <mat-form-field class = "numeric-form-field">
+        <mat-label>Minimum</mat-label>
+        <input 
+            [formControl] = "lowerBound" 
+            type = "number"
+            matInput
+        >
+    </mat-form-field>
+    <div class = "range-hyphen">-</div>
+    <mat-form-field class = "numeric-form-field">
+        <mat-label>Maximum</mat-label>
+        <input 
+            [formControl] = "upperBound" 
+            type = "number"
+            matInput
+        >
+    </mat-form-field>
+</div>

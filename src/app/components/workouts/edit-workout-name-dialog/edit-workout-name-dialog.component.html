@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Update Workout Name</h2>
+<mat-dialog-content>
+    <app-workout-name-form-field [name] = "name" (enter) = "onSubmit()"></app-workout-name-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button [disabled] = "name.invalid" [mat-dialog-close] = "name.value" mat-raised-button>Save</button>
+    <button mat-dialog-close mat-raised-button color = "warn">Cancel</button>
+</mat-dialog-actions>

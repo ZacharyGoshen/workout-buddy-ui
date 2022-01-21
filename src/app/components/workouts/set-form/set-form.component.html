@@ -1,0 +1,30 @@
+<div class = "workout-set-headers">
+    <app-exercise-headers></app-exercise-headers>
+</div>
+<mat-divider></mat-divider>
+<div>
+    <div *ngFor = "let exercise of set.exercises; index as i">
+        <app-exercise-form 
+            [exerciseNames] = "exerciseNames"
+            [exercise] = "exercise"
+            [needsRemoveButton] = "set.exercises.length > 1" 
+            (remove) = "removeExercise(i)"
+        >
+        </app-exercise-form>
+        <mat-divider></mat-divider>
+    </div>
+    <div class = "add-exercise-button-container">
+        <button 
+            class = "add-exercise-button" 
+            mat-raised-button
+            (click) = "addExercise()"
+        >
+            Add Exercise
+        </button>
+    </div>
+    <mat-divider></mat-divider>
+    <div class = "time-rested-constraint">
+        <div class = "exercise-name-column"></div>
+        <app-constraint-form [name] = "'Time Rested (s)'" [constraint] = "set.restTimeConstraint"></app-constraint-form>
+    </div>
+</div>

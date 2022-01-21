@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Update Set {{ index + 1 }}</h2>
+<mat-dialog-content>
+    <app-set-form [set] = "set" [exerciseNames] = "exerciseNames"></app-set-form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button [disabled] = "set.invalid" [mat-dialog-close] = "set.toSet()" mat-raised-button>Save</button>
+    <button mat-dialog-close mat-raised-button color = "warn">Cancel</button>
+</mat-dialog-actions>

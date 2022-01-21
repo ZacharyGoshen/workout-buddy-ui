@@ -1,0 +1,27 @@
+<h2 mat-dialog>Edit Search Criteria</h2>
+<mat-dialog-content>
+    <div class = "time-rested-filter">
+        <div class = "time-rested-label">Time Rested:</div>
+        <app-numeric-range-form 
+            [lowerBound] = "searchCriteria.minimumTimeRested" 
+            [upperBound] = "searchCriteria.maximumTimeRested"
+        >
+        </app-numeric-range-form>
+    </div>
+    <mat-divider class = "time-rested-divider"></mat-divider>
+    <div *ngFor = "let exerciseFilter of searchCriteria.exerciseFilters; index as i" class = "exercise-filter">
+        <app-exercise-search-filter 
+            [filter] = "exerciseFilter" 
+            [exerciseNames] = "exerciseNames"
+            (remove) = "removeExerciseFilter(i)"
+        >
+        </app-exercise-search-filter>
+        <mat-divider></mat-divider>
+    </div>
+    <button (click) = "addExerciseFilter()" class = "add-exercise-filter-button" mat-raised-button>Add Exercise Filter</button>
+    <mat-divider></mat-divider>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button [disabled] = "searchCriteria.invalid" [mat-dialog-close] = "searchCriteria.toSetSearchCriteria()" mat-raised-button>Save</button>
+    <button mat-dialog-close mat-raised-button color = "warn">Cancel</button>
+</mat-dialog-actions>

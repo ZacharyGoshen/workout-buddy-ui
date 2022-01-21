@@ -1,0 +1,19 @@
+<div class = "exercise-form">
+    <div class = "exercise-name-column">
+        <app-exercise-select-form-field [exercise] = "exercise.name" [exerciseNames] = "exerciseNames"></app-exercise-select-form-field>
+    </div>
+    <div>
+        <app-constraint-form [name] = "'Weight Used (lbs)'" [constraint] = "exercise.weightConstraint"></app-constraint-form>
+        <app-constraint-form [name] = "'Reps Completed'" [constraint] = "exercise.repsConstraint"></app-constraint-form>
+        <app-constraint-form [name] = "'Time Peformed (s)'" [constraint] = "exercise.durationConstraint"></app-constraint-form>
+    </div>
+    <button 
+        *ngIf = "needsRemoveButton" 
+        class = "remove-exercise-button"
+        (click) = "removeExercise()"
+        mat-raised-button
+        color = "warn"
+    >
+        Remove Exercise
+    </button>
+</div>

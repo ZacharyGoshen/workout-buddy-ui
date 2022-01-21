@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ExerciseDescriptionListComponent } from './exercises/exercise-description-list/exercise-description-list.component';
-import { SetListComponent } from './sets/set-list/set-list.component';
-import { WorkoutListComponent } from './workouts/workout-list/workout-list.component';
-import { WorkoutComponent } from './workouts/workout/workout.component';
+import { ExerciseDescriptionListComponent } from './components/exercises/exercise-description-list/exercise-description-list.component';
+import { SetListComponent } from './components/sets/set-list/set-list.component';
+import { WorkoutListComponent } from './components/workouts/workout-list/workout-list.component';
+import { WorkoutComponent } from './components/workouts/workout/workout.component';
 
 const routes: Routes = [
   { path: 'workouts', component: WorkoutListComponent },

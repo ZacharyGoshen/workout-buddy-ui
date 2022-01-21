@@ -1,0 +1,16 @@
+<app-navbar></app-navbar>
+<div class = "exercise-description-list">
+    <app-exercise-description 
+        *ngFor = "let exerciseDescription of exerciseDescriptions"
+        [exerciseDescription] = "exerciseDescription"
+        (update) = "fetchExerciseDescriptions()"
+    >
+    </app-exercise-description>
+    <button 
+        (click) = "openCreateExerciseDescriptionDialog()"
+        class = "create-new-exercise-button"
+        mat-raised-button
+    >
+        Create New Exercise
+    </button>
+</div>

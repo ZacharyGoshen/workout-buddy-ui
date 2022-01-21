@@ -9,40 +9,43 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SetListComponent } from './sets/set-list/set-list.component';
-import { WorkoutComponent } from './workouts/workout/workout.component';
-import { SetComponent } from './sets/set/set.component';
-import { SetFormComponent } from './workouts/set-form/set-form.component';
-import { ExerciseFormComponent } from './workouts/exercise-form/exercise-form.component';
+import { SetListComponent } from './components/sets/set-list/set-list.component';
+import { WorkoutComponent } from './components/workouts/workout/workout.component';
+import { SetListItemComponent } from './components/sets/set-list-item/set-list-item.component';
+import { SetFormComponent } from './components/workouts/set-form/set-form.component';
+import { ExerciseFormComponent } from './components/workouts/exercise-form/exercise-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { EditableSetComponent } from './workouts/editable-set/editable-set.component';
-import { ExerciseHeadersComponent } from './workouts/exercise-headers/exercise-headers.component';
-import { AddSetFormComponent } from './workouts/add-set-form/add-set-form.component';
-import { EditSetFormComponent } from './workouts/edit-set-form/edit-set-form.component';
-import { ConstraintComponent } from './shared/constraint/constraint.component';
+import { EditableSetComponent } from './components/workouts/editable-set/editable-set.component';
+import { ExerciseHeadersComponent } from './components/shared/exercise-headers/exercise-headers.component';
+import { ConstraintComponent } from './components/shared/constraint/constraint.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SetSearchCriteriaComponent } from './sets/set-search-criteria/set-search-criteria.component';
-import { ExerciseSearchFilterComponent } from './sets/exercise-search-filter/exercise-search-filter.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { NumericRangeFormComponent } from './sets/shared/numeric-range-form/numeric-range-form.component';
-import { ExerciseComponent } from './shared/exercise/exercise.component';
-import { SetContentComponent } from './shared/set-content/set-content.component';
-import { ExerciseDescriptionComponent } from './exercises/exercise-description/exercise-description.component';
-import { ExerciseDescriptionListComponent } from './exercises/exercise-description-list/exercise-description-list.component';
-import { AddExerciseDescriptionFormComponent } from './exercises/add-exercise-description-form/add-exercise-description-form.component';
-import { WorkoutListComponent } from './workouts/workout-list/workout-list.component';
-import { WorkoutListItemComponent } from './workouts/workout-list-item/workout-list-item.component';
-import { ExerciseDescriptionNameFormFieldComponent } from './exercises/exercise-description-name-form-field/exercise-description-name-form-field.component';
-import { EditExerciseDescriptionFormComponent } from './exercises/edit-exercise-description-form/edit-exercise-description-form.component';
-import { WorkoutNameFormFieldComponent } from './workouts/workout-name-form-field/workout-name-form-field.component';
-import { EditableWorkoutNameComponent } from './workouts/editable-workout-name/editable-workout-name.component';
-import { EditableWorkoutCompletionTimeComponent } from './workouts/editable-workout-completion-time/editable-workout-completion-time.component';
-import { WorkoutSetHeadersComponent } from './workouts/workout-set-headers/workout-set-headers.component';
-import { ExerciseSelectFormFieldComponent } from './shared/exercise-select-form-field/exercise-select-form-field.component';
-import { ConstraintFormComponent } from './workouts/constraint-form/constraint-form.component';
+import { SetSearchCriteriaComponent } from './components/sets/set-search-criteria/set-search-criteria.component';
+import { ExerciseSearchFilterComponent } from './components/sets/exercise-search-filter/exercise-search-filter.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { NumericRangeFormComponent } from './components/shared/numeric-range-form/numeric-range-form.component';
+import { ExerciseComponent } from './components/shared/exercise/exercise.component';
+import { SetContentComponent } from './components/shared/set-content/set-content.component';
+import { ExerciseDescriptionComponent } from './components/exercises/exercise-description/exercise-description.component';
+import { ExerciseDescriptionListComponent } from './components/exercises/exercise-description-list/exercise-description-list.component';
+import { WorkoutListComponent } from './components/workouts/workout-list/workout-list.component';
+import { WorkoutListItemComponent } from './components/workouts/workout-list-item/workout-list-item.component';
+import { ExerciseDescriptionNameFormFieldComponent } from './components/exercises/exercise-description-name-form-field/exercise-description-name-form-field.component';
+import { WorkoutNameFormFieldComponent } from './components/workouts/workout-name-form-field/workout-name-form-field.component';
+import { EditableWorkoutCompletionTimeComponent } from './components/workouts/editable-workout-completion-time/editable-workout-completion-time.component';
+import { WorkoutSetHeadersComponent } from './components/workouts/workout-set-headers/workout-set-headers.component';
+import { ExerciseSelectFormFieldComponent } from './components/shared/exercise-select-form-field/exercise-select-form-field.component';
+import { ConstraintFormComponent } from './components/workouts/constraint-form/constraint-form.component';
+import { EditExerciseDescriptionDialogComponent } from './components/exercises/edit-exercise-description-dialog/edit-exercise-description-dialog.component';
+import { AddExerciseDescriptionDialogComponent } from './components/exercises/add-exercise-description-dialog/add-exercise-description-dialog.component';
+import { EditWorkoutNameDialogComponent } from './components/workouts/edit-workout-name-dialog/edit-workout-name-dialog.component';
+import { EditSetDialogComponent } from './components/workouts/edit-set-dialog/edit-set-dialog.component';
+import { AddSetDialogComponent } from './components/workouts/add-set-dialog/add-set-dialog.component';
+import { SetListItemHeadersComponent } from './components/sets/set-list-item-headers/set-list-item-headers.component';
+import { EditSetSearchCriteriaDialogComponent } from './components/sets/edit-set-search-criteria-dialog/edit-set-search-criteria-dialog.component';
 
 @NgModule({
   declarations: [
@@ -50,12 +53,10 @@ import { ConstraintFormComponent } from './workouts/constraint-form/constraint-f
     SetListComponent,
     WorkoutComponent,
     EditableSetComponent,
-    SetComponent,
+    SetListItemComponent,
     SetFormComponent,
     ExerciseFormComponent,
     ExerciseHeadersComponent,
-    AddSetFormComponent,
-    EditSetFormComponent,
     ConstraintComponent,
     SetSearchCriteriaComponent,
     ExerciseSearchFilterComponent,
@@ -65,17 +66,21 @@ import { ConstraintFormComponent } from './workouts/constraint-form/constraint-f
     SetContentComponent,
     ExerciseDescriptionComponent,
     ExerciseDescriptionListComponent,
-    AddExerciseDescriptionFormComponent,
     WorkoutListComponent,
     WorkoutListItemComponent,
     ExerciseDescriptionNameFormFieldComponent,
-    EditExerciseDescriptionFormComponent,
     WorkoutNameFormFieldComponent,
-    EditableWorkoutNameComponent,
     EditableWorkoutCompletionTimeComponent,
     WorkoutSetHeadersComponent,
     ExerciseSelectFormFieldComponent,
-    ConstraintFormComponent
+    ConstraintFormComponent,
+    EditExerciseDescriptionDialogComponent,
+    AddExerciseDescriptionDialogComponent,
+    EditWorkoutNameDialogComponent,
+    EditSetDialogComponent,
+    AddSetDialogComponent,
+    SetListItemHeadersComponent,
+    EditSetSearchCriteriaDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -91,7 +96,8 @@ import { ConstraintFormComponent } from './workouts/constraint-form/constraint-f
     MatButtonModule,
     MatDividerModule,
     MatCheckboxModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

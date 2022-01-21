@@ -1,0 +1,44 @@
+.set-list-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.set-list-item-headers {
+    margin: 10px 0px;
+}
+
+.set {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.workout-name-column {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+}
+
+.workout-name {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.date-completed-column {
+    display: flex;
+    flex-direction: column;
+    width: 200px
+}
+
+.date-completed {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.space-fill-container {
+    flex-grow: 1;
+}

@@ -1,0 +1,22 @@
+<app-navbar></app-navbar>
+<div class = "set-list">
+    <div class = "search-options">
+        <mat-form-field class = "sort-form-field">
+            <mat-label>Sort By:</mat-label>
+            <mat-select [formControl] = "sortBy" (selectionChange) = "fetchSets()">
+                <mat-option [value] = "'mostRecentCompletionTime'">Date Completed (Most Recent)</mat-option>
+                <mat-option [value] = "'leastRecentCompletionTime'">Date Completed (Least Recent)</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <div>
+            <button (click) = "openEditSearchCriteriaDialog()" mat-raised-button>Edit Search Criteria</button>
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <div *ngFor = "let set of sets">
+        <div class = "set-list-item">
+            <app-set-list-item [set] = "set"></app-set-list-item>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+</div>

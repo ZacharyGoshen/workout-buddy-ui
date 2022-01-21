@@ -1,0 +1,15 @@
+.exercise-search-filter {
+    margin-bottom: 10px;
+}
+
+.search-criterion {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+}
+
+.search-criterion-label {
+    font-weight: 500;
+    width: 200px;
+}

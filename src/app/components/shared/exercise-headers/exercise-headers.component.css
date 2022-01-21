@@ -1,0 +1,29 @@
+.exercise-headers {
+    display: flex;
+    flex-direction: row;
+}
+
+.exercise-header {
+    font-weight: 500;
+    width: 200px;   
+}
+
+.constraint-header {
+    font-weight: 500;
+    width: 200px;   
+}
+
+.recorded-header {
+    font-weight: 500;
+    width: 200px;   
+}
+
+.minimum-header {
+    font-weight: 500;
+    width: 200px;   
+}
+
+.maximum-header {
+    font-weight: 500;
+    width: 200px;   
+}
