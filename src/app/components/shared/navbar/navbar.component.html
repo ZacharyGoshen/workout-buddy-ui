@@ -1,11 +1,22 @@
-<div class = "navbar flex-row align-center">
-    <div class = "navbar-link">
-        <a routerLink = "/workouts">Workouts</a>
+<mat-toolbar fxLayout = "row" fxLayoutAlign = "start center" fxLayoutGap = "20" color = "primary">
+    <div fxLayout = "row" fxLayoutAlign = "start center" fxLayoutGap = "10">
+        <div class = "logo-name">Workout Buddy</div>
+        <mat-icon svgIcon = "dumbbell"></mat-icon>
     </div>
-    <div class = "navbar-link">
-        <a routerLink = "/sets">Sets</a>
+    <div fxShow fxHide.lt-sm>
+        <a mat-button routerLink = "/workouts">Workouts</a>
+        <a mat-button routerLink = "/sets">Sets</a>
+        <a mat-button routerLink = "/exercises">Exercises</a>
     </div>
-    <div class = "navbar-link">
-        <a routerLink = "/exercises">Exercises</a>
+    <div fxFlex = "1 1 auto"></div>
+    <div fxHide fxShow.lt-sm>
+        <button mat-icon-button [matMenuTriggerFor] = "menu">
+            <mat-icon>menu</mat-icon>
+        </button>
     </div>
-</div>
+</mat-toolbar>
+<mat-menu #menu>
+    <a mat-menu-item routerLink = "/workouts">Workouts</a>
+    <a mat-menu-item routerLink = "/sets">Sets</a>
+    <a mat-menu-item routerLink = "/exercises">Exercises</a>
+</mat-menu>

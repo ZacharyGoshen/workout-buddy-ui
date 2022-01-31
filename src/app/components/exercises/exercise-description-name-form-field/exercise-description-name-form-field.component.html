@@ -1,4 +1,5 @@
-<mat-form-field class = "input">
+<mat-form-field class = "input" appearance = "fill">
+    <mat-label>Exercise Name</mat-label>
     <input 
         matInput 
         type = "text" 
@@ -10,12 +11,12 @@
         {{ name.value.length }} / 50
     </mat-hint>
     <mat-error *ngIf = "name.hasError('required')">
-        Exercise name is required
+        Required
     </mat-error>
     <mat-error  *ngIf = "name.hasError('minlength')">
-        Exercise name must be at least 3 characters
+        Must be at least 3 characters
     </mat-error>
     <mat-error  *ngIf = "name.hasError('maxlength')">
-        Exercise name must be at most 50 characters
+        Must be 50 characters or less
     </mat-error>
 </mat-form-field>

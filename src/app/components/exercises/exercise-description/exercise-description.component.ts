@@ -4,6 +4,7 @@ import { ExerciseDescriptionDeletionService } from 'src/app/services/exercise/ex
 import { ExerciseDescriptionUpdateService } from 'src/app/services/exercise/exercise-description-update.service';
 import { EditExerciseDescriptionDialogComponent } from '../edit-exercise-description-dialog/edit-exercise-description-dialog.component';
 import { ExerciseDescription } from '../../../models/exercise-description.model';
+import { ErrorDialogComponent } from '../../shared/error-dialog/error-dialog.component';
 
 @Component({
   selector: 'app-exercise-description',
@@ -50,7 +51,19 @@ export class ExerciseDescriptionComponent {
   delete(): void {
     this.exerciseDescriptionDeletionService
       .deleteById(this.exerciseDescription.id)
-      .subscribe(observer => this.update.emit());
+      .subscribe(
+        observer => this.update.emit(),
+        errorResponse => this.handleDeleteError());
+  }
+
+  handleDeleteError(): void {
+    let dialogConfiguration: MatDialogConfig = {
+      data: {
+        message: "The exercise can't be deleted because it belongs to one or more workouts."
+      }
+    }
+
+    this.dialog.open(ErrorDialogComponent, dialogConfiguration);
   }
 
 }

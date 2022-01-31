@@ -20,12 +20,14 @@ export class WorkoutListItemComponent {
   @Output() delete: EventEmitter<null> = new EventEmitter();
 
   workoutUrl: string = '';
+  workoutExecutorUrl: string = ''
   formattedCompletionTime: string = '';
 
   constructor(private router: Router, private workoutCreationService: WorkoutCreationService, private workoutDeletionService: WorkoutDeletionService) {}
   
   ngOnInit(): void {
     this.workoutUrl = '/workouts/' + this.workout.id;
+    this.workoutExecutorUrl = this.workout + '/execute'
     this.formattedCompletionTime = DateFormatter.format(this.workout.timeCompleted!);
   }
 

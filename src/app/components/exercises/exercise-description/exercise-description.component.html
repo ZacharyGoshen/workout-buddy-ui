@@ -1,9 +1,26 @@
-<div class = "exercise-description">
-    <div>{{ exerciseDescription.name }}</div>
-    <div class = "space-fill-container"></div>
-    <div>
-        <button mat-raised-button class = "edit-button" (click) = "edit()">Edit</button>
-        <button mat-raised-button color = "warn" (click) = "delete()">Delete</button>
+<div 
+    class = "exercise-description" 
+    fxLayout = "row" 
+    fxLayoutAlign = "start center" 
+    fxLayoutGap = "10px"
+>
+    <div fxFlex = "1 1 100%">{{ exerciseDescription.name }}</div>
+    <div fxLayout = "row">
+        <button 
+            (click) = "edit()" 
+            mat-icon-button 
+            matTooltip = "edit"
+            color = "primary"
+        >
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button 
+            (click) = "delete()" 
+            mat-icon-button 
+            matTooltip = "delete"
+            color = "warn"
+        >
+            <mat-icon>delete</mat-icon>
+        </button>
     </div>
 </div>
-<mat-divider></mat-divider>  

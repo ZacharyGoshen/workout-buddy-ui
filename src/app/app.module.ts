@@ -10,6 +10,11 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon'
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -46,6 +51,9 @@ import { EditSetDialogComponent } from './components/workouts/edit-set-dialog/ed
 import { AddSetDialogComponent } from './components/workouts/add-set-dialog/add-set-dialog.component';
 import { SetListItemHeadersComponent } from './components/sets/set-list-item-headers/set-list-item-headers.component';
 import { EditSetSearchCriteriaDialogComponent } from './components/sets/edit-set-search-criteria-dialog/edit-set-search-criteria-dialog.component';
+import { WorkoutExecutorComponent } from './components/workouts/workout-executor/workout-executor.component';
+import { WorkoutExecutorSetComponent } from './components/workouts/workout-executor-set/workout-executor-set.component';
+import { ErrorDialogComponent } from './components/shared/error-dialog/error-dialog.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +88,10 @@ import { EditSetSearchCriteriaDialogComponent } from './components/sets/edit-set
     EditSetDialogComponent,
     AddSetDialogComponent,
     SetListItemHeadersComponent,
-    EditSetSearchCriteriaDialogComponent
+    EditSetSearchCriteriaDialogComponent,
+    WorkoutExecutorComponent,
+    WorkoutExecutorSetComponent,
+    ErrorDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -97,7 +108,12 @@ import { EditSetSearchCriteriaDialogComponent } from './components/sets/edit-set
     MatDividerModule,
     MatCheckboxModule,
     MatSelectModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule,
+    MatTooltipModule,
+    MatToolbarModule,
+    FlexLayoutModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

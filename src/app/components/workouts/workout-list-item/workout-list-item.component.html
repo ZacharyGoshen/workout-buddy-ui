@@ -1,5 +1,5 @@
 <div class = "workout-list-item">
-    <a class = "workout-link" [routerLink] = "workoutUrl">{{ workout.name }}</a>
+    <a [routerLink] = "workoutUrl" class = "workout-link">{{ workout.name }}</a>
     <div class = "hyphen">-</div>
     <div 
         *ngIf = "workout.timeCompleted" 
@@ -13,7 +13,8 @@
     >
         Not Completed
     </div>
-    <button mat-raised-button class = "copy-button" (click) = "createNotCompletedCopyOfWorkout()">Copy As New Workout</button>
-    <button mat-raised-button color = "warn" (click) = "deleteWorkout()">Delete</button>
+    <button [routerLink] = "workoutExecutorUrl" class = "begin-button" mat-raised-button>Begin</button>
+    <button (click) = "createNotCompletedCopyOfWorkout()" class = "copy-button" mat-raised-button>Copy As New Workout</button>
+    <button (click) = "deleteWorkout()" mat-raised-button color = "warn">Delete</button>
 </div>  
 <mat-divider></mat-divider>
