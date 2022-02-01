@@ -1,4 +1,5 @@
 export interface ExerciseDescription {
     id: string,
-    name: string
+    name: string,
+    muscleGroups: string[]
 }

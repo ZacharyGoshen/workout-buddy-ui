@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -9,11 +9,5 @@ import { FormControl } from '@angular/forms';
 export class ExerciseDescriptionNameFormFieldComponent {
 
   @Input() name: FormControl = new FormControl('');
-
-  @Output() enter: EventEmitter<null> = new EventEmitter();
-
-  onEnter(): void {
-    this.enter.emit();
-  }
 
 }

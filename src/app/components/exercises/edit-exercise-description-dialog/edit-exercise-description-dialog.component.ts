@@ -10,7 +10,7 @@ import { ExerciseDescription } from '../../../models/exercise-description.model'
 })
 export class EditExerciseDescriptionDialogComponent {
 
-  exerciseDescription: ExerciseDescriptionForm = new ExerciseDescriptionForm({ id: '', name: '' });
+  exerciseDescription: ExerciseDescriptionForm = new ExerciseDescriptionForm({ id: '', name: '', muscleGroups: [] });
 
   constructor(
       private dialog: MatDialogRef<EditExerciseDescriptionDialogComponent>,

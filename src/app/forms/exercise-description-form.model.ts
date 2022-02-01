@@ -1,16 +1,20 @@
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import { ExerciseDescription } from "../models/exercise-description.model";
+import { MuscleGroupsForm } from "./muscle-groups-form.model";
 
 export class ExerciseDescriptionForm extends FormGroup {
 
     constructor(exerciseDescription: ExerciseDescription) {
-        let nameControl: FormControl = new FormControl(
+        let name: FormControl = new FormControl(
             exerciseDescription.name,
             [Validators.required, Validators.minLength(3), Validators.maxLength(50)]
         );
 
+        let muscleGroups: MuscleGroupsForm = new MuscleGroupsForm(exerciseDescription.muscleGroups);
+
         super({
-            name: nameControl
+            name: name,
+            muscleGroups: muscleGroups
         });
     }
 
@@ -18,10 +22,17 @@ export class ExerciseDescriptionForm extends FormGroup {
         return this.controls['name'] as FormControl;
     }
 
+    get muscleGroups(): MuscleGroupsForm {
+        return this.get('muscleGroups') as MuscleGroupsForm;
+    }
+
     toExerciseDescription(): ExerciseDescription {
+        let muscleGroups: string[] = this.muscleGroups.toMuscleGroups();
+
         return {
             id: '',
-            name: this.name.value
+            name: this.name.value,
+            muscleGroups: muscleGroups
         }
     }
 

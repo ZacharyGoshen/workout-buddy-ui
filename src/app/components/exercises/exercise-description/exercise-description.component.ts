@@ -15,7 +15,8 @@ export class ExerciseDescriptionComponent {
 
   @Input() exerciseDescription: ExerciseDescription = {
     id: "",
-    name: ""
+    name: "",
+    muscleGroups: []
   };
 
   @Output() update: EventEmitter<null> = new EventEmitter();

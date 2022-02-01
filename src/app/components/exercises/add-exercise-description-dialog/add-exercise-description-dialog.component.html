@@ -1,6 +1,6 @@
 <div class = "title" mat-dialog-title>Create New Exercise</div>
-<mat-dialog-content class = "content">
-    <app-exercise-description-name-form-field [name] = "exerciseDescription.name" (enter) = "onSubmit()"></app-exercise-description-name-form-field>
+<mat-dialog-content class = "content">    
+    <app-exercise-description-form [exerciseDescription] = "exerciseDescription"></app-exercise-description-form>
 </mat-dialog-content>
 <mat-dialog-actions>
     <button 

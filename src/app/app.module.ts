@@ -15,6 +15,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatChipsModule } from '@angular/material/chips';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -54,6 +55,8 @@ import { EditSetSearchCriteriaDialogComponent } from './components/sets/edit-set
 import { WorkoutExecutorComponent } from './components/workouts/workout-executor/workout-executor.component';
 import { WorkoutExecutorSetComponent } from './components/workouts/workout-executor-set/workout-executor-set.component';
 import { ErrorDialogComponent } from './components/shared/error-dialog/error-dialog.component';
+import { MuscleGroupsFormComponent } from './components/exercises/muscle-groups-form/muscle-groups-form.component';
+import { ExerciseDescriptionFormComponent } from './components/exercises/exercise-description-form/exercise-description-form.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +94,9 @@ import { ErrorDialogComponent } from './components/shared/error-dialog/error-dia
     EditSetSearchCriteriaDialogComponent,
     WorkoutExecutorComponent,
     WorkoutExecutorSetComponent,
-    ErrorDialogComponent
+    ErrorDialogComponent,
+    MuscleGroupsFormComponent,
+    ExerciseDescriptionFormComponent
   ],
   imports: [
     BrowserModule,
@@ -113,7 +118,8 @@ import { ErrorDialogComponent } from './components/shared/error-dialog/error-dia
     MatTooltipModule,
     MatToolbarModule,
     FlexLayoutModule,
-    MatMenuModule
+    MatMenuModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

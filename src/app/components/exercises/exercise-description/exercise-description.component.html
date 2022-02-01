@@ -4,7 +4,17 @@
     fxLayoutAlign = "start center" 
     fxLayoutGap = "10px"
 >
-    <div fxFlex = "1 1 100%">{{ exerciseDescription.name }}</div>
+    <div fxFlex = "1 1 100%">
+        <div>{{ exerciseDescription.name }}</div>
+        <div fxLayout = "row wrap" fxLayoutGap = "5px">
+            <div
+                *ngFor = "let muscleGroup of exerciseDescription.muscleGroups" 
+                class = "muscle-group"
+            >
+                {{ muscleGroup }}
+            </div>
+        </div>
+    </div>
     <div fxLayout = "row">
         <button 
             (click) = "edit()" 
