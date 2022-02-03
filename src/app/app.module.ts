@@ -16,6 +16,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -57,6 +58,9 @@ import { WorkoutExecutorSetComponent } from './components/workouts/workout-execu
 import { ErrorDialogComponent } from './components/shared/error-dialog/error-dialog.component';
 import { MuscleGroupsFormComponent } from './components/exercises/muscle-groups-form/muscle-groups-form.component';
 import { ExerciseDescriptionFormComponent } from './components/exercises/exercise-description-form/exercise-description-form.component';
+import { ExerciseDescriptionSearchOptionsComponent } from './components/exercises/exercise-description-search-options/exercise-description-search-options.component';
+import { ExerciseDescriptionOptionsComponent } from './components/exercises/exercise-description-options/exercise-description-options.component';
+import { ExerciseDescriptionOptionsBarComponent } from './components/exercises/exercise-description-options-bar/exercise-description-options-bar.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +100,10 @@ import { ExerciseDescriptionFormComponent } from './components/exercises/exercis
     WorkoutExecutorSetComponent,
     ErrorDialogComponent,
     MuscleGroupsFormComponent,
-    ExerciseDescriptionFormComponent
+    ExerciseDescriptionFormComponent,
+    ExerciseDescriptionSearchOptionsComponent,
+    ExerciseDescriptionOptionsComponent,
+    ExerciseDescriptionOptionsBarComponent
   ],
   imports: [
     BrowserModule,
@@ -119,7 +126,8 @@ import { ExerciseDescriptionFormComponent } from './components/exercises/exercis
     MatToolbarModule,
     FlexLayoutModule,
     MatMenuModule,
-    MatChipsModule
+    MatChipsModule,
+    MatExpansionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

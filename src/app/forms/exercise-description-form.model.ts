@@ -32,6 +32,7 @@ export class ExerciseDescriptionForm extends FormGroup {
         return {
             id: '',
             name: this.name.value,
+            notes: '',
             muscleGroups: muscleGroups
         }
     }

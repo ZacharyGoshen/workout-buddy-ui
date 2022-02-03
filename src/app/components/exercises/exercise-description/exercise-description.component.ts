@@ -13,10 +13,11 @@ import { ErrorDialogComponent } from '../../shared/error-dialog/error-dialog.com
 })
 export class ExerciseDescriptionComponent {
 
-  @Input() exerciseDescription: ExerciseDescription = {
-    id: "",
-    name: "",
-    muscleGroups: []
+  @Input() exerciseDescription: ExerciseDescription = { 
+      id: '', 
+      notes: '',
+      name: '', 
+      muscleGroups: [] 
   };
 
   @Output() update: EventEmitter<null> = new EventEmitter();

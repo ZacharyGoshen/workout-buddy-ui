@@ -18,4 +18,9 @@ export class ExerciseDescriptionQueryService {
         return this.httpClient.get<ExerciseDescription[]>('http://localhost:8080/api/exercise-descriptions');
     }
 
+    findByNameSorted(name: string, sortBy: string): Observable<ExerciseDescription[]> {
+        let url: string = 'http://localhost:8080/api/exercise-descriptions?name=' + name + '&sortBy=' + sortBy;
+        return this.httpClient.get<ExerciseDescription[]>(url);
+    }
+
 }

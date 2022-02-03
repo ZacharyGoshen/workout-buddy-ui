@@ -1,0 +1,24 @@
+<div fxHide.lt-md>
+    <app-exercise-description-options
+        [sortBy] = "sortBy" 
+        [searchByName] = "searchByName" 
+        (search) = "search.emit()"
+        (create) = "create.emit()"
+    >
+    </app-exercise-description-options>
+    <mat-divider></mat-divider>
+</div>
+<mat-accordion fxHide fxShow.lt-md>
+    <mat-expansion-panel>
+        <mat-expansion-panel-header>
+            <mat-panel-title>Options</mat-panel-title>
+        </mat-expansion-panel-header>
+        <app-exercise-description-options
+            [sortBy] = "sortBy" 
+            [searchByName] = "searchByName" 
+            (search) = "search.emit()"
+            (create) = "create.emit()"
+        >
+        </app-exercise-description-options>
+    </mat-expansion-panel>
+</mat-accordion>

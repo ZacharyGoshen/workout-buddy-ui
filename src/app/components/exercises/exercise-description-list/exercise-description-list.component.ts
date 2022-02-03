@@ -5,6 +5,7 @@ import { ExerciseDescriptionCreationService } from 'src/app/services/exercise/ex
 import { ExerciseDescriptionQueryService } from 'src/app/services/exercise/exercise-description-query.service';
 import { AddExerciseDescriptionDialogComponent } from '../add-exercise-description-dialog/add-exercise-description-dialog.component';
 import { ExerciseDescription } from '../../../models/exercise-description.model';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-exercise-description-list',
@@ -14,6 +15,10 @@ import { ExerciseDescription } from '../../../models/exercise-description.model'
 export class ExerciseDescriptionListComponent implements OnInit {
 
   exerciseDescriptions: ExerciseDescription[] = [];
+
+  sortBy: FormControl = new FormControl('nameAlphabetically');
+  
+  searchByName = new FormControl('');
 
   constructor(
     private exerciseDescriptionQueryService: ExerciseDescriptionQueryService,
@@ -25,7 +30,9 @@ export class ExerciseDescriptionListComponent implements OnInit {
   }
 
   fetchExerciseDescriptions(): void {
-    let exerciseDescriptionsObservable: Observable<ExerciseDescription[]> = this.exerciseDescriptionQueryService.findAll();
+    let exerciseDescriptionsObservable: Observable<ExerciseDescription[]> = this.exerciseDescriptionQueryService
+      .findByNameSorted(this.searchByName.value, this.sortBy.value);
+
     exerciseDescriptionsObservable.subscribe(exerciseDescriptions => this.exerciseDescriptions = exerciseDescriptions);
   }
 

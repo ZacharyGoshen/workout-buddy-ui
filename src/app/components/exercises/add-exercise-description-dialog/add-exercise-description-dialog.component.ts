@@ -9,7 +9,12 @@ import { ExerciseDescriptionForm } from 'src/app/forms/exercise-description-form
 })
 export class AddExerciseDescriptionDialogComponent {
 
-  exerciseDescription: ExerciseDescriptionForm = new ExerciseDescriptionForm({ id: '', name: '', muscleGroups: [] });
+  exerciseDescription: ExerciseDescriptionForm = new ExerciseDescriptionForm({ 
+      id: '', 
+      notes: '',
+      name: '', 
+      muscleGroups: [] 
+  });
 
   constructor(private dialog: MatDialogRef<AddExerciseDescriptionDialogComponent>) {}
 

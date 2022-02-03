@@ -1,4 +1,11 @@
 <div class = "container" fxLayout = "column" fxLayoutGap = "10px">
     <app-exercise-description-name-form-field [name] = "exerciseDescription.name"></app-exercise-description-name-form-field>
+    <mat-form-field appearance = "fill">
+        <mat-label>Notes</mat-label>
+        <textarea matInput cdkTextareaAutosize></textarea>
+        <mat-hint align = "start">
+            0 / 500
+        </mat-hint>
+    </mat-form-field>
     <app-muscle-groups-form [muscleGroups] = "exerciseDescription.muscleGroups"></app-muscle-groups-form>
 </div>

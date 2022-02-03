@@ -8,6 +8,11 @@ import { ExerciseDescriptionForm } from 'src/app/forms/exercise-description-form
 })
 export class ExerciseDescriptionFormComponent {
 
-  @Input() exerciseDescription: ExerciseDescriptionForm = new ExerciseDescriptionForm({ id: '', name: '', muscleGroups: [] });
+  @Input() exerciseDescription: ExerciseDescriptionForm = new ExerciseDescriptionForm({ 
+      id: '', 
+      notes: '',
+      name: '', 
+      muscleGroups: [] 
+  });
 
 }

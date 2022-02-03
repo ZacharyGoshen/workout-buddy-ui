@@ -1,0 +1,26 @@
+<div 
+    class = "options"
+    fxLayout.gt-sm = "row" 
+    fxLayout.lt-md = "column" 
+    fxLayoutGap.gt-sm = "20px"
+    fxLayoutGap.lt-md = "10px"
+    fxLayoutAlign.gt-sm = "flex-start center"
+>
+    <div fxFlex = "1 1 100%">
+        <app-exercise-description-search-options 
+            [sortBy] = "sortBy" 
+            [name] = "searchByName" 
+            (search) = "search.emit()"
+        >
+        </app-exercise-description-search-options>
+    </div>
+    <div>
+        <button 
+            (click) = "create.emit()"
+            mat-raised-button
+            color = "primary"
+        >
+            Create New Exercise
+        </button>
+    </div>
+</div>

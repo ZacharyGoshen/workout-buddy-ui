@@ -1,0 +1,26 @@
+<div 
+    class = "search-options" 
+    fxLayout.gt-sm = "row" 
+    fxLayout.lt-md = "column" 
+    fxLayoutGap.gt-sm = "20px"
+    fxLayoutGap.lt-md = "10px"
+>
+    <mat-form-field appearance = "fill">
+        <mat-label>Sort By</mat-label>
+        <mat-select [formControl] = "sortBy" (selectionChange) = "search.emit()">
+            <mat-option [value] = "'nameAlphabetically'">Name (A-Z)</mat-option>
+            <mat-option [value] = "'nameReverseAlphabetically'">Name (Z-A)</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field class = "input" appearance = "fill">
+        <mat-label>Execise Name</mat-label>
+        <input 
+            [formControl] = "name"
+            (input) = "search.emit()"
+            matInput 
+            type = "text" 
+            placeholder = "Exercise Name"
+        >
+        <mat-icon matSuffix>search</mat-icon>
+    </mat-form-field>
+</div>
