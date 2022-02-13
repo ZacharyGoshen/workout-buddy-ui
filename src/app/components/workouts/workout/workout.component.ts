@@ -8,8 +8,9 @@ import { WorkoutQueryService } from 'src/app/services/workout/workout-query.serv
 import { WorkoutUpdateService } from 'src/app/services/workout/workout-update.service';
 import { ExerciseDescription } from 'src/app/models/exercise-description.model';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
-import { EditWorkoutNameDialogComponent } from '../edit-workout-name-dialog/edit-workout-name-dialog.component';
+import { EditWorkoutDialogComponent } from '../edit-workout-dialog/edit-workout-dialog.component';
 import { AddSetDialogComponent } from '../add-set-dialog/add-set-dialog.component';
+import { WorkoutForm } from 'src/app/forms/workout-form.model';
 
 @Component({
   selector: 'app-workout',
@@ -69,24 +70,25 @@ export class WorkoutComponent implements OnInit {
     this.exerciseNames = exerciseDescriptions.map(exerciseDescription => exerciseDescription.name);
   }
 
-  openUpdateWorkoutNameDialog(): void {
+  openUpdateWorkoutDialog(): void {
     let dialogConfiguration: MatDialogConfig = {
       data: {
-        name: this.workout.name
+        workout: this.workout
       }
     }
 
-    let dialog: MatDialogRef<EditWorkoutNameDialogComponent> = this.dialog.open(EditWorkoutNameDialogComponent, dialogConfiguration);
+    let dialog: MatDialogRef<EditWorkoutDialogComponent> = this.dialog.open(EditWorkoutDialogComponent, dialogConfiguration);
 
-    dialog.afterClosed().subscribe(name => this.updateWorkoutName(name));
+    dialog.afterClosed().subscribe(workoutForm => this.updateWorkout(workoutForm));
   }
 
-  updateWorkoutName(name: string): void {
-    if (!name) {
+  updateWorkout(workoutForm: WorkoutForm): void {
+    if (!workoutForm) {
       return;
     }
 
-    this.workout.name = name;
+    this.workout.name = workoutForm.name.value;
+    this.workout.timeCompleted = workoutForm.completionTime.value;
     
     this.workoutUpdateService
       .update(this.workoutId, this.workout)

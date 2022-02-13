@@ -1,0 +1,9 @@
+<div class = "title" mat-dialog-title>Update Workout</div>
+<mat-dialog-content fxLayout = "column" fxLayoutGap = "10px">
+    <app-workout-name-form-field [name] = "workout.name" (enter) = "onSubmit()"></app-workout-name-form-field>
+    <app-workout-completion-time-form-field [completionTime] = "workout.completionTime"></app-workout-completion-time-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button [disabled] = "workout.invalid" [mat-dialog-close] = "workout" mat-raised-button color = "primary">Save</button>
+    <button mat-dialog-close mat-raised-button color = "warn">Cancel</button>
+</mat-dialog-actions>

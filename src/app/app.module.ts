@@ -17,6 +17,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatCardModule } from '@angular/material/card'; 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,13 +43,13 @@ import { WorkoutListComponent } from './components/workouts/workout-list/workout
 import { WorkoutListItemComponent } from './components/workouts/workout-list-item/workout-list-item.component';
 import { ExerciseDescriptionNameFormFieldComponent } from './components/exercises/exercise-description-name-form-field/exercise-description-name-form-field.component';
 import { WorkoutNameFormFieldComponent } from './components/workouts/workout-name-form-field/workout-name-form-field.component';
-import { EditableWorkoutCompletionTimeComponent } from './components/workouts/editable-workout-completion-time/editable-workout-completion-time.component';
+import { WorkoutCompletionTimeFormFieldComponent } from './components/workouts/workout-completion-time-form-field/workout-completion-time-form-field.component';
 import { WorkoutSetHeadersComponent } from './components/workouts/workout-set-headers/workout-set-headers.component';
 import { ExerciseSelectFormFieldComponent } from './components/shared/exercise-select-form-field/exercise-select-form-field.component';
 import { ConstraintFormComponent } from './components/workouts/constraint-form/constraint-form.component';
 import { EditExerciseDescriptionDialogComponent } from './components/exercises/edit-exercise-description-dialog/edit-exercise-description-dialog.component';
 import { AddExerciseDescriptionDialogComponent } from './components/exercises/add-exercise-description-dialog/add-exercise-description-dialog.component';
-import { EditWorkoutNameDialogComponent } from './components/workouts/edit-workout-name-dialog/edit-workout-name-dialog.component';
+import { EditWorkoutDialogComponent } from './components/workouts/edit-workout-dialog/edit-workout-dialog.component';
 import { EditSetDialogComponent } from './components/workouts/edit-set-dialog/edit-set-dialog.component';
 import { AddSetDialogComponent } from './components/workouts/add-set-dialog/add-set-dialog.component';
 import { SetListItemHeadersComponent } from './components/sets/set-list-item-headers/set-list-item-headers.component';
@@ -61,6 +62,8 @@ import { ExerciseDescriptionFormComponent } from './components/exercises/exercis
 import { ExerciseDescriptionSearchOptionsComponent } from './components/exercises/exercise-description-search-options/exercise-description-search-options.component';
 import { ExerciseDescriptionOptionsComponent } from './components/exercises/exercise-description-options/exercise-description-options.component';
 import { ExerciseDescriptionOptionsBarComponent } from './components/exercises/exercise-description-options-bar/exercise-description-options-bar.component';
+import { WorkoutHeaderComponent } from './components/workouts/workout-header/workout-header.component';
+import { WorkoutSetListComponent } from './components/workouts/workout-set-list/workout-set-list.component';
 
 @NgModule({
   declarations: [
@@ -85,13 +88,13 @@ import { ExerciseDescriptionOptionsBarComponent } from './components/exercises/e
     WorkoutListItemComponent,
     ExerciseDescriptionNameFormFieldComponent,
     WorkoutNameFormFieldComponent,
-    EditableWorkoutCompletionTimeComponent,
+    WorkoutCompletionTimeFormFieldComponent,
     WorkoutSetHeadersComponent,
     ExerciseSelectFormFieldComponent,
     ConstraintFormComponent,
     EditExerciseDescriptionDialogComponent,
     AddExerciseDescriptionDialogComponent,
-    EditWorkoutNameDialogComponent,
+    EditWorkoutDialogComponent,
     EditSetDialogComponent,
     AddSetDialogComponent,
     SetListItemHeadersComponent,
@@ -103,7 +106,9 @@ import { ExerciseDescriptionOptionsBarComponent } from './components/exercises/e
     ExerciseDescriptionFormComponent,
     ExerciseDescriptionSearchOptionsComponent,
     ExerciseDescriptionOptionsComponent,
-    ExerciseDescriptionOptionsBarComponent
+    ExerciseDescriptionOptionsBarComponent,
+    WorkoutHeaderComponent,
+    WorkoutSetListComponent
   ],
   imports: [
     BrowserModule,
@@ -127,7 +132,8 @@ import { ExerciseDescriptionOptionsBarComponent } from './components/exercises/e
     FlexLayoutModule,
     MatMenuModule,
     MatChipsModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

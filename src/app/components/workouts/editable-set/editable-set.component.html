@@ -1,19 +1,36 @@
-<div class = "editable-set">
+<div class = "editable-set" fxLayout = "row" fxLayoutGap = "10px">
+    <div class = "index">{{ index + 1 }}</div>
     <div>
-        <div class = "workout-set-headers">
-            <app-workout-set-headers [index] = "index"></app-workout-set-headers>
+        <div class = "exercise-headers">
+            <app-exercise-headers></app-exercise-headers>
         </div>
-        <mat-divider></mat-divider>
-        <div class = "set-content">
-            <app-set-content [set] = "set"></app-set-content>
-        </div>
+        <app-set-content [set] = "set"></app-set-content>
     </div>
-    <div class = "space-fill-container"></div>
-    <div>
-        <div class = "buttons">
-            <button mat-raised-button class = "edit-button" (click) = "openUpdateSetDialog()">Edit</button>
-            <button mat-raised-button class = "duplicate-button" (click) = "duplicate.emit()">Duplicate</button>
-            <button mat-raised-button color = "warn" (click) = "remove.emit()">Remove</button>
-        </div>
+    <div fxFlex = "1 1 100%"></div>
+    <div fxLayout = "row">
+        <button 
+            (click) = "openUpdateSetDialog()"
+            mat-icon-button 
+            matTooltip = "edit"
+            color = "primary"
+        >
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button 
+            (click) = "duplicate.emit()"
+            mat-icon-button 
+            matTooltip = "duplicate"
+            color = "primary"
+        >
+            <mat-icon>file_copy</mat-icon>
+        </button>
+        <button 
+            (click) = "remove.emit()"
+            mat-icon-button 
+            matTooltip = "remove"
+            color = "warn"
+        >
+            <mat-icon>delete</mat-icon>
+        </button>
     </div>
 </div>

@@ -1,10 +1,11 @@
-<mat-form-field class = "workout-name-form-field">
+<mat-form-field class = "workout-name-form-field" appearance = "fill">
+    <mat-label>Name</mat-label>
     <input 
+        [formControl] = "name"
+        (keyup.enter) = "onEnter()"
         matInput 
         type = "text" 
         placeholder = "Workout Name"
-        [formControl] = "name"
-        (keyup.enter) = "onEnter()"
     >
     <mat-hint align = "start">
         {{ name.value.length }} / 50

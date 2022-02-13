@@ -1,6 +1,7 @@
-<div *ngIf = "isVisible" class = "constraint">
+<div *ngIf = "isVisible" fxLayout = "row">
     <div class = "name-column">{{ name }}</div>
-    <div class = "recorded-value-column">{{ recordedValue }}</div>
+    <div *ngIf = "recordedValue" class = "recorded-value-column">{{ recordedValue }}</div>
+    <div *ngIf = "!recordedValue" class = "recorded-value-column">No Record</div>
     <div class = "minimum-value-allowed-column">{{ minimumValueAllowed }}</div>
     <div class = "maximum-value-allowed-column">{{ maximumValueAllowed }}</div>
 </div>

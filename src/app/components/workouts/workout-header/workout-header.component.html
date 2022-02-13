@@ -1,0 +1,26 @@
+<div class = "workout-header" fxLayout = "row" fxLayoutAlign = "start center">
+    <div fxFlex = "1 1 100%">
+        <div fxLayout = "row" fxLayoutAlign = "start center">
+            <div *ngIf = "workout.timeCompleted" class = "workout-name">{{ workout.name }} - {{ workout.timeCompleted | date }}</div>
+            <div *ngIf = "!workout.timeCompleted" class = "workout-name">{{ workout.name }} - Not Completed</div>
+            <button 
+                (click) = "editName.emit()" 
+                mat-icon-button 
+                matTooltip = "edit workout" 
+                color = "primary"
+            >
+                <mat-icon>edit</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div>
+        <button 
+            (click) = "addSet.emit()" 
+            class = "add-set-button"
+            mat-raised-button
+            color = "primary"
+        >
+            Add Set
+        </button>
+    </div>
+</div>

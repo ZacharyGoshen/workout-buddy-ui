@@ -1,33 +1,22 @@
 <app-navbar></app-navbar>
 <div *ngIf = "workoutHasBeenFetched && exercisesHaveBeenFetched" class = "workout">
-    <div class = "workout-name-container">
-        <div class = "workout-name">{{ workout.name }}</div>
-        <button mat-raised-button (click) = "openUpdateWorkoutNameDialog()">Edit</button>
-    </div>
-    <app-editable-workout-completion-time
-        [completionTime] = "workout.timeCompleted" 
-        (edit) = "updateWorkoutCompletionTime($event)"
+    <app-workout-header 
+        [workout] = "workout"
+        (editName) = "openUpdateWorkoutDialog()"
+        (updateCompletionTime) = "updateWorkoutCompletionTime($event)"
+        (addSet) = "openAddSetDialog()"
     >
-    </app-editable-workout-completion-time>
+    </app-workout-header>
     <mat-divider></mat-divider>
-    <div (cdkDropListDropped) = "moveSet($event)" cdkDropList >
-        <div *ngFor = "let set of workout.sets; index as i">
-            <div cdkDrag >
-                <app-editable-set 
-                    [index] = "i"
-                    [set] = "set"
-                    [exerciseNames] = "exerciseNames"
-                    (update) = "updateSet(i, $event)"
-                    (duplicate) = "duplicateSet(i)"
-                    (remove) = "removeSet(i)"
-                >   
-                </app-editable-set>
-            </div>
-            <mat-divider></mat-divider>
-        </div>
+    <div class = "center-container">
+        <app-workout-set-list 
+            [sets] = "workout.sets" 
+            [exerciseNames] = "exerciseNames"
+            (moveSet) = "moveSet($event)"
+            (updateSet) = "updateSet($event.index, $event.set)"
+            (duplicateSet) = "duplicateSet($event)"
+            (removeSet) = "removeSet($event)"
+        >
+        </app-workout-set-list>
     </div>
-    <button 
-        class = "add-set-button"
-        (click) = "openAddSetDialog()" 
-        mat-raised-button>Add Set</button>
 </div>

@@ -1,11 +1,9 @@
 .exercise {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    padding: 5px;
 }
 
 .exercise-name {
-    margin-top: 5px;
-    margin-bottom: 5px;
-    width: 200px;
+    width: 150px;
 }

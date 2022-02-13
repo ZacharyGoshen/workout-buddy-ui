@@ -1,0 +1,13 @@
+<mat-form-field appearance = "fill">
+    <mat-label>Completed on</mat-label>
+    <input 
+        [matDatepicker] = "completionTimeDatePicker" 
+        [formControl] = "completionTime"
+        matInput
+    >
+    <mat-datepicker-toggle matSuffix [for] = "completionTimeDatePicker"></mat-datepicker-toggle>
+    <button mat-button *ngIf="completionTime.value" matSuffix mat-icon-button (click) = "completionTime.setValue('')">
+        <mat-icon>close</mat-icon>
+    </button>
+    <mat-datepicker #completionTimeDatePicker></mat-datepicker>
+</mat-form-field>

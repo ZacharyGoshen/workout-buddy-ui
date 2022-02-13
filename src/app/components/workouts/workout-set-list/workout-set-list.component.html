@@ -1,0 +1,20 @@
+<div 
+    (cdkDropListDropped) = "moveSet.emit($event)" 
+    class = "set-list"
+    cdkDropList
+>
+    <div *ngFor = "let set of sets; index as i">
+        <div cdkDrag>
+            <app-editable-set 
+                [index] = "i"
+                [set] = "set"
+                [exerciseNames] = "exerciseNames"
+                (update) = "updateSet.emit({ index: i, set: $event })"
+                (duplicate) = "duplicateSet.emit(i)"
+                (remove) = "removeSet.emit(i)"
+            >   
+            </app-editable-set>
+        </div>
+        <mat-divider></mat-divider>
+    </div>
+</div>
