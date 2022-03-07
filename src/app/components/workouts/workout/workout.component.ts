@@ -139,7 +139,7 @@ export class WorkoutComponent implements OnInit {
     }
 
     this.workoutUpdateService
-      .updateSet(this.workoutId, index, set)
+      .replaceSet(this.workoutId, index, set)
       .subscribe(observer => this.fetchWorkout());
   }
 

@@ -16,7 +16,7 @@ export class ExerciseDescriptionUpdateService {
 
     update(id: string, exerciseDescription: ExerciseDescription): Observable<null> {
         let queryString: string = 'http://localhost:8080/api/exercise-descriptions/' + id; 
-        return this.httpClient.put<null>(queryString, exerciseDescription);
+        return this.httpClient.patch<null>(queryString, exerciseDescription);
     }
 
 }

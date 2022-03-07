@@ -25,8 +25,8 @@ export class WorkoutUpdateService {
         return this.httpClient.post<null>(queryString, set);
     }
 
-    updateSet(workoutId: string, setIndex: number, set: Set): Observable<null> {
-        let queryString: string = 'http://localhost:8080/api/workouts/' + workoutId + '/updateSet/' + setIndex; 
+    replaceSet(workoutId: string, setIndex: number, set: Set): Observable<null> {
+        let queryString: string = 'http://localhost:8080/api/workouts/' + workoutId + '/replaceSet/' + setIndex; 
         return this.httpClient.post<null>(queryString, set);
     }
 
